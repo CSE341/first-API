@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
 const path = require('path')
+require('dotenv').config(); //To use env. variables
 
 
 
