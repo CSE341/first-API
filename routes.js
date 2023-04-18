@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { home } = require('./controllers/routes');
+const { home, contacts } = require('./controllers/routes');
 
 
 const route = Router();
@@ -7,6 +7,9 @@ const route = Router();
 
 //Home route
 route.get('/', home);
+
+//All data
+route.get('/contacts', contacts);
 
 
 module.exports = route;
