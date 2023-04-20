@@ -12,7 +12,7 @@ const dbConnection = async() => {
         
     } catch (error) {
         console.log(error);
-        throw new Error('Conection error');
+        throw new Error('DB conection error');
     }
 }
 

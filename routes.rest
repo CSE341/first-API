@@ -1,0 +1,18 @@
+//Localhost tests
+
+GET http://localhost:3000
+###
+GET http://localhost:3000/oneContact
+###
+GET http://localhost:3000/allContacts
+
+
+//Production tests
+
+###
+GET https://firstapi-p6pt.onrender.com/
+###
+GET https://firstapi-p6pt.onrender.com/oneContact
+###
+GET https://firstapi-p6pt.onrender.com/allContacts
+

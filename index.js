@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require('./routes/routes');
+const routes = require('./routes/contacts');
 const path = require('path')
 require('dotenv').config(); //To use env. variables
 const dbConnection  = require('./config/db.config'); //Database connection
