@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require('./routes');
+const routes = require('./routes/routes');
 const path = require('path')
 require('dotenv').config(); //To use env. variables
 const dbConnection  = require('./db/config'); //Database connection
@@ -14,7 +14,6 @@ dbConnection(); //execute db connection
 
 app.use(routes);
 app.use(json());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, ()=> {
 console.log(`Running on port ${port}`);

@@ -5,6 +5,26 @@ const home = (req, res) => {
     res.send('I love you Marlen');
 }
 
+const oneContact = async(req, res) => {
+    const id = '643d3fb3bb47d900b47da77b';
+    const myContact = await myContacts.findOne({_id : id});
+
+    res.send(
+        `<table>
+        <tr>
+        <th>Contact information</th>
+        </tr>
+        <tr>
+        <td>${myContact.firstName}</td>
+        <td>${myContact.lastName} -</td>
+        <td>${myContact.email} -</td>
+        <td>${myContact.favoriteColor} -</td>
+        <td>${myContact.birthday}</td>
+        </tr>
+    </table>`
+    )
+}
+
 const contacts = async(req, res) => {
 
     const allContacts = await myContacts.find({});
@@ -13,7 +33,7 @@ const contacts = async(req, res) => {
     const head =
     `<table>
     <tr>
-    <th>Contacts information:</th>
+    <th>All contacts information:</th>
     </tr>
     </table>`;
     for (const file of allContacts){
@@ -33,5 +53,5 @@ const contacts = async(req, res) => {
 
 
 module.exports = {
-    home, contacts
+    home, oneContact, contacts
 }
