@@ -6,7 +6,7 @@ const home = (req, res) => {
 }
 
 const oneContact = async(req, res) => {
-    const id = '643d3fb3bb47d900b47da77b';
+    const id = req.params['id'];
     const myContact = await myContacts.findOne({_id : id});
 
     res.send(

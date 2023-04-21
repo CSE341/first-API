@@ -9,7 +9,7 @@ const route = Router();
 route.get('/', home);
 
 //One contact
-route.get('/oneContact', oneContact);
+route.get('/oneContact/:id', oneContact);
 
 //All data
 route.get('/allContacts', contacts);
