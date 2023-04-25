@@ -1,5 +1,6 @@
 const {Router} = require('express');
-const { home, oneContact, contacts } = require('../controllers/routes');
+const { home, oneContact, contacts, addContact, updateContact, deleteContact } = require('../controllers/routes');
+bodyParser = require('body-parser').json();
 
 
 const route = Router();
@@ -14,5 +15,13 @@ route.get('/oneContact/:id', oneContact);
 //All data
 route.get('/allContacts', contacts);
 
+//Add contact
+route.post('/addContact', bodyParser, addContact);
+
+//Update contact
+route.put('/updateContact', bodyParser, updateContact);
+
+//Delete Contact
+route.delete('/deleteContact/:id', deleteContact);
 
 module.exports = route;
