@@ -87,10 +87,11 @@ const addContact = async (req, res) => {
   }
 };
 
-//Update a especific fields of a contact
+//Update especific fields of a contact
 const updateContact = async (req, res) => {
   const { firstName, lastName, email, favoriteColor, birthday } = req.body;
-  const myContact = await myContacts.findOne({ email: email });
+  const id = req.params["id"];
+  const myContact = await myContacts.findOne({ _id: id });
   if (myContact) {
     try {
       await myContacts.replaceOne({_id: myContact.id}, {

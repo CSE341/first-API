@@ -19,7 +19,7 @@ route.get('/allContacts', contacts);
 route.post('/addContact', bodyParser, addContact);
 
 //Update contact
-route.put('/updateContact', bodyParser, updateContact);
+route.put('/updateContact/:id', bodyParser, updateContact);
 
 //Delete Contact
 route.delete('/deleteContact/:id', deleteContact);
