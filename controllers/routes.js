@@ -77,7 +77,7 @@ const addContact = async (req, res) => {
     await newContact
       .save()
       .then((savedContact) => {
-        res.status(201).json(savedContact);
+        res.status(201).json(savedContact._id);
       })
       .catch((error) => {
         res.status(500).json({ error: error.message });
