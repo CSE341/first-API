@@ -87,10 +87,11 @@ const addContact = async (req, res) => {
   }
 };
 
-//Update a especific fields of a contact
+//Update especific fields of a contact
 const updateContact = async (req, res) => {
   const { firstName, lastName, email, favoriteColor, birthday } = req.body;
-  const myContact = await myContacts.findOne({ email: email });
+  const id = req.params["id"];
+  const myContact = await myContacts.findOne({ _id: id });
   if (myContact) {
     try {
       await myContacts.replaceOne({_id: myContact.id}, {
@@ -115,7 +116,7 @@ const updateContact = async (req, res) => {
 //Deleting a contact by id
 const deleteContact = async (req, res) => {
     const id = req.params["id"];
-    myContacts.findOneAndDelete({ _id: id })
+    await myContacts.findOneAndDelete({ _id: id })
     .then(deletedContact => {
       if (!deletedContact) {
         return res.status(404).json({ error: 'Contact not found' });

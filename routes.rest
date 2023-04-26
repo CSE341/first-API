@@ -5,7 +5,30 @@ GET http://localhost:3000
 GET http://localhost:3000/oneContact
 ###
 GET http://localhost:3000/allContacts
+###
+POST http://localhost:3000/addContact 
+content-type: application/json
 
+{
+"firstName": "Peter",
+"lastName": "Pan",
+"email": "neverland@example.com",
+"favoriteColor": "green",
+"birthday": "1999-05-13"
+}
+###
+PUT  http://localhost:3000/updateContact/64482ea021bbca504d1e762a
+content-type: application/json
+
+{
+"firstName": "Lola",
+"lastName": "Castro",
+"email": "castro@example.com",
+"favoriteColor": "pink",
+"birthday": "1993-05-13"
+}
+###
+DELETE http://localhost:3000/deleteContact/6448e28fb4a3563811dc209f
 
 //Production tests
 
@@ -16,3 +39,27 @@ GET https://firstapi-p6pt.onrender.com/oneContact
 ###
 GET https://firstapi-p6pt.onrender.com/allContacts
 
+###
+POST https://firstapi-p6pt.onrender.com/addContact 
+content-type: application/json
+
+{
+"firstName": "Peter",
+"lastName": "Pan",
+"email": "neverland@example.com",
+"favoriteColor": "green",
+"birthday": "1999-05-13"
+}
+###
+PUT  https://firstapi-p6pt.onrender.com/updateContact/64482ea021bbca504d1e762a
+content-type: application/json
+
+{
+"firstName": "Lola",
+"lastName": "Castro",
+"email": "castro@example.com",
+"favoriteColor": "pink",
+"birthday": "1993-05-13"
+}
+###
+DELETE https://firstapi-p6pt.onrender.com/deleteContact/6448e28fb4a3563811dc209f
