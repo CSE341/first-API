@@ -1,9 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-      "title": "Contacs API",
+      "title": "My Contacts API",
       "description": "This is an API to organize contacts in a mongo data base",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     "host": "localhost:3000",
     "basePath": "/",
@@ -42,32 +42,16 @@
       "/allContacts/": {
         "get": {
           "description": "All contacts are retrieved",
-          "parameters": [
-            {
-              "name": "id",
-              "in": "path",
-              "required": true,
-              "type": "string"
-            }
-          ],
+          "parameters": [],
           "responses": {}
         }
       },
-      "/addContacts/": {
-        "get": {
+      "/addContact/": {
+        "post": {
           "description": "Add new contact to database",
           "produces": [
             "application/json"
           ],
-          "parameters": [],
-          "responses": {
-            "200": {
-              "description": "OK"
-            }
-          }
-        },
-        "post": {
-          "description": "",
           "parameters": [
             {
               "name": "body",
@@ -105,27 +89,11 @@
         }
       },
       "/updateContact/{id}": {
-        "get": {
+        "put": {
           "description": "Update an existing contact in our database",
           "produces": [
             "application/json"
           ],
-          "parameters": [
-            {
-              "name": "id",
-              "in": "path",
-              "required": true,
-              "type": "string"
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK"
-            }
-          }
-        },
-        "put": {
-          "description": "",
           "parameters": [
             {
               "name": "id",
@@ -166,8 +134,10 @@
               "description": "Internal Server Error"
             }
           }
-        },
-        "deleteContact/{id}": {
+        }
+      },
+        "/deleteContact/{id}": {
+          "delete": {
           "description": "",
           "parameters": [
             {
@@ -188,4 +158,5 @@
         }
       }
     }
+    
   }
