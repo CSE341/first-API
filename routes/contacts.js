@@ -27,7 +27,7 @@ route.put('/updateContact/:id', updateContact);
 //Delete Contact
 route.delete('/deleteContact/:id', deleteContact);
 
-//API Dcoumentation
+//API Documentation
 route.get('/doc', swaggerUi.setup(swaggerDocument));
 
 module.exports = route;
