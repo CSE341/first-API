@@ -1,10 +1,13 @@
 const {Router} = require('express');
 const { home, oneContact, contacts, addContact, updateContact, deleteContact } = require('../controllers/routes');
-bodyParser = require('body-parser').json();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../swagger.json');
+
 
 
 const route = Router();
 
+route.use('/doc', swaggerUi.serve);
 
 //Home route
 route.get('/', home);
@@ -16,12 +19,15 @@ route.get('/oneContact/:id', oneContact);
 route.get('/allContacts', contacts);
 
 //Add contact
-route.post('/addContact', bodyParser, addContact);
+route.post('/addContact', addContact);
 
 //Update contact
-route.put('/updateContact/:id', bodyParser, updateContact);
+route.put('/updateContact/:id', updateContact);
 
 //Delete Contact
 route.delete('/deleteContact/:id', deleteContact);
+
+//API Dcoumentation
+route.get('/doc', swaggerUi.setup(swaggerDocument));
 
 module.exports = route;

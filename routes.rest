@@ -10,11 +10,11 @@ POST http://localhost:3000/addContact
 content-type: application/json
 
 {
-"firstName": "Peter",
-"lastName": "Pan",
-"email": "neverland@example.com",
-"favoriteColor": "green",
-"birthday": "1999-05-13"
+"firstName": "Pablo",
+"lastName": "Escobar",
+"email": "pablo@example.com",
+"favoriteColor": "blue",
+"birthday": "1958-11-03"
 }
 ###
 PUT  http://localhost:3000/updateContact/64482ea021bbca504d1e762a
@@ -24,8 +24,8 @@ content-type: application/json
 "firstName": "Lola",
 "lastName": "Castro",
 "email": "castro@example.com",
-"favoriteColor": "pink",
-"birthday": "1993-05-13"
+"favoriteColor": "purple",
+"birthday": "1993-05-15"
 }
 ###
 DELETE http://localhost:3000/deleteContact/6448e28fb4a3563811dc209f
