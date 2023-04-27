@@ -44,22 +44,22 @@ POST https://firstapi-p6pt.onrender.com/addContact
 content-type: application/json
 
 {
-"firstName": "Peter",
+"firstName": "Rose",
 "lastName": "Pan",
-"email": "neverland@example.com",
+"email": "neverland2@example.com",
 "favoriteColor": "green",
 "birthday": "1999-05-13"
 }
 ###
-PUT  https://firstapi-p6pt.onrender.com/updateContact/64482ea021bbca504d1e762a
+PUT  https://firstapi-p6pt.onrender.com/updateContact/6449b1d104f42183be934161
 content-type: application/json
 
 {
-"firstName": "Lola",
+"firstName": "Rose",
 "lastName": "Castro",
-"email": "castro@example.com",
+"email": "rose@example.com",
 "favoriteColor": "pink",
 "birthday": "1993-05-13"
 }
 ###
-DELETE https://firstapi-p6pt.onrender.com/deleteContact/6448e28fb4a3563811dc209f
+DELETE https://firstapi-p6pt.onrender.com/deleteContact/6449b1d104f42183be934161
