@@ -1,4 +1,3 @@
-const { send } = require("process");
 const myContacts = require("../models/contacts");
 
 //home route
@@ -116,16 +115,20 @@ const updateContact = async (req, res) => {
 //Deleting a contact by id
 const deleteContact = async (req, res) => {
     const id = req.params["id"];
-    await myContacts.findOneAndDelete({ _id: id })
-    .then(deletedContact => {
-      if (!deletedContact) {
-        return res.status(404).json({ error: 'Contact not found' });
-      }
-      res.status(200).json({ message: 'Contact deleted successfully' });
-    })
-    .catch(error => {
-      res.status(500).json({ error: error.message });
-    });
+    try {
+      await myContacts.findOneAndDelete({ _id: id })
+      .then(deletedContact => {
+        if (!deletedContact) {
+          return res.status(404).json({ error: 'Contact not found' });
+        }
+        res.status(200).json({ message: 'Contact deleted successfully' });
+      })
+      .catch(error => {
+        res.status(500).json({ error: error.message });
+      });
+    } catch (error) {
+      
+    }
 }
 
 module.exports = {
